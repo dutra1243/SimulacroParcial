@@ -37,9 +37,11 @@ export const SportCard = (dataDTO: SportsDTO) => {
             <div className='sportsCard'>
                 <h2>{dataDTO.title}</h2>
                 <div className='sportsCardButtons'>
-                    <button>
-                        <Link to={route}> Detalles </Link>
-                    </button>
+                    <Link to={route}>
+                        <button>
+                            Detalles
+                        </button>
+                    </Link>
                     <button onClick={handleDelete}>Borrar</button>
                 </div>
 

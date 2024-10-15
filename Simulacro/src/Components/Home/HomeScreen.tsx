@@ -35,9 +35,11 @@ export const HomeScreen = () => {
             <div>
                 <h1>Juegos Olimpícos 2024</h1>
             </div>
-            <button className='addButton'>
-                <Link to="/addSport">Agregar Deporte</Link>
-            </button>
+            <Link to="/addSport">
+                <button className='addButton'>
+                    Agregar Deporte
+                </button>
+            </Link>
             <div className='sportsContent'>
                 {sports && sports.map((data: any) => <SportCard id={data.id} key={data.id} {...data} />)}
 

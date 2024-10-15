@@ -51,9 +51,11 @@ export const AddSport = () => {
             <div>
                 <h1 id="header">Agregar Deporte</h1>
             </div>
-            <button className='addButton'>
-                <Link to="/">Atrás</Link>
-            </button>
+            <Link to="/">
+                <button className='addButton'>
+                    Atrás
+                </button>
+            </Link>
             <div className='newSportForm'>
                 <form className='Form'>
                     <label>Nombre del deporte:</label>

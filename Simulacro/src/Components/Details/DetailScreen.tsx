@@ -30,9 +30,11 @@ export const DetailScreen = () => {
 
     return (
         <>
-            <button>
-                <Link to="/">Atrás</Link>
-            </button>
+            <Link to="/">
+                <button>
+                    Atrás
+                </button>
+            </Link>
             <div className='sportsData'>
                 <h1>{data ? data.title : "undefined"}</h1>
                 <p>{data ? data.description : "undefined"}</p>
