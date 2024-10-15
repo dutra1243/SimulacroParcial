@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -10,7 +10,6 @@ import { SportsContext } from './Components/SportsContext'
 
 function App() {
 
-  const [sports, setSports] = useState()
 
   const router = createBrowserRouter([
     {
@@ -26,6 +25,24 @@ function App() {
       element: <AddSport />
     }
   ])
+
+  const [sports, setSports] = useState()
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/games", {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    )
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setSports(data)
+      })
+
+  }, [])
 
   return (
     <>
